@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.ibm.zuul.bean.ResponseBean;
 
-@FeignClient(name = "securityuser-service")
+@FeignClient(name = "SMC-Users")
 public interface SecurityFeignClient {
 	
     // verify admin role
