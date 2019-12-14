@@ -71,7 +71,7 @@ public class PreFilter extends ZuulFilter {
 
 	    if (StringUtils.isNotBlank(authHeader)) {
 	      HttpStatus authChkStatus = INTERNAL_SERVER_ERROR;
-	      System.out.println("authChkStatus >>>" + authChkStatus);
+	    //   System.out.println("authChkStatus >>>" + authChkStatus);
 	      try {
 	        if (request.getRequestURI().indexOf(ADMIN_URI) >= 0) {
 	          authChkStatus = securityFeignClient.isAdmin(authHeader).getStatusCode();
