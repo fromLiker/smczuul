@@ -7,4 +7,5 @@ ENV PROJECT_ARTIFACTID="smczuul" PROJECT_VERSION="0.0.1-SNAPSHOT"
 #当使用本地目录为源目录时，推荐使用 COPY
 COPY target/$PROJECT_ARTIFACTID-$PROJECT_VERSION.jar /smczuul/zuul.jar
 EXPOSE 8888
-ENTRYPOINT ["java", "-jar", "/smczuul/zuul.jar"]
+# ENTRYPOINT ["java", "-jar", "/smczuul/zuul.jar"]
+ENTRYPOINT ["java","-Xms200m","-Xmx300m","-jar","/smczuul/zuul.jar"]
