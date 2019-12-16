@@ -8,4 +8,4 @@ ENV PROJECT_ARTIFACTID="smczuul" PROJECT_VERSION="0.0.1-SNAPSHOT"
 COPY target/$PROJECT_ARTIFACTID-$PROJECT_VERSION.jar /smczuul/zuul.jar
 EXPOSE 8888
 # ENTRYPOINT ["java", "-jar", "/smczuul/zuul.jar"]
-ENTRYPOINT ["java","-Xms200m","-Xmx300m","-jar","/smczuul/zuul.jar"]
+ENTRYPOINT ["java","-Xms400m","-Xmx500m","-jar","/smczuul/zuul.jar"]
