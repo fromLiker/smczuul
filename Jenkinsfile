@@ -34,7 +34,7 @@ pipeline {
           sh 'docker image build -t ${DOCKERHUBNAME}/zuul .'
           // sh 'docker push ${DOCKERHUBNAME}/zuul'
           // sh 'docker run -d -p 8888:8888 --network smc-net --name smczuul ${DOCKERHUBNAME}/zuul'
-          sh 'docker run -d -p 8888:8888 --memory=600M --name smczuul ${DOCKERHUBNAME}/zuul'
+          sh 'docker run -d -p 8888:8888 --memory=600M --network smc-net --name SMC-Zuul ${DOCKERHUBNAME}/zuul'
         }
       }
     }
