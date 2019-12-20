@@ -22,6 +22,11 @@ pipeline {
       agent any
       steps {
         script {
+          def REMOVE_FLAG_C = sh(returnStdout: true, script: "docker container ls -q --filter name=.*SMC-Zuul.*") != ""
+          echo "REMOVE_FLAG_C: ${REMOVE_FLAG_C}"
+          if(REMOVE_FLAG_C){
+            sh 'docker container rm -f $(docker container ls -q --filter name=.*SMC-Zuul.*)'
+          }
           def REMOVE_FLAG = sh(returnStdout: true, script: "docker image ls -q *${DOCKERHUBNAME}/zuul*") != ""
           echo "REMOVE_FLAG: ${REMOVE_FLAG}"
           if(REMOVE_FLAG){
